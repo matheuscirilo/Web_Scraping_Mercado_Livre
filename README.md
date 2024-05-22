@@ -1,7 +1,7 @@
 ﻿# Web scraping no site do MercadoLivre
 
-Para rodar o web scraping
-scrapy crawl mercadolivre  -> -o ../../data/data.jsonl
+Para rodar o web scraping -> 
+scrapy crawl mercadolivre -o ../../data/data.jsonl
 
 Para rodar o PANDAS tem que fazer isso dentro da pasta SRC ->
 python transformacao/main.py
