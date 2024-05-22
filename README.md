@@ -1,15 +1,17 @@
 ﻿# Web scraping no site do MercadoLivre
 
-Para rodar o web scraping ->
+Dentro da pasta SRC os seguintes comandos:
+
+Para rodar o web scraping (EXTRAT)->
 
 > scrapy crawl mercadolivre -o ../../data/data.jsonl
 
-Para rodar o PANDAS tem que fazer isso dentro da pasta SRC ->
+Para rodar o PANDAS (TRANSFORM e LOAD)->
 
 > python transformacao/main.py
 
 
-Para rodar o Streamlit tem que fazer isso dentro da pasta SRC ->
+Para rodar o Streamlit (BI)->
 
 > streamlit run dashboard/app.py 
 
