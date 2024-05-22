@@ -37,7 +37,6 @@ top_10_pages_brands = df['brand'].value_counts().sort_values(ascending=False)
 col1.bar_chart(top_10_pages_brands)
 col2.write(top_10_pages_brands)
 
-
 # Qual o preço médio por marca
 st.subheader('Preço médio por marca')
 col1, col2 = st.columns([4, 2])
@@ -53,3 +52,12 @@ df_non_zero_reviews = df[df['reviews_rating_number'] > 0]
 satisfaction_by_brand = df_non_zero_reviews.groupby('brand')['reviews_rating_number'].mean().sort_values(ascending=False)
 col1.bar_chart(satisfaction_by_brand)
 col2.write(satisfaction_by_brand)
+
+# Qual a média de desconto por marca
+st.subheader('Média de desconto por marca')
+col1, col2 = st.columns([4, 2])
+df['desconto'] = df['new_price'] / df['old_price']
+desconto_medio_marca = df.groupby('brand')['desconto'].mean().sort_values(ascending=False)
+col1.bar_chart(desconto_medio_marca)
+col2.write(desconto_medio_marca)
+
