@@ -61,7 +61,7 @@ Foi desenvolvido um painel de BI com Streamlit que permite a visualização inte
    pip install -r requirements.txt
    ```
 
-3. **Execute o scraper:**
+3. **Execute o scraper na pasta src\coleta:**
    ```bash
    scrapy crawl mercadolivre -o ../data/data.jsonl
    ```
