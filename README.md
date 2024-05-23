@@ -45,7 +45,7 @@ Foi desenvolvido um painel de BI com Streamlit que permite a visualização inte
 - Marcas mais encontradas
 - Preço médio por marca
 - Satisfação média por marca (avaliação)
-- Desconto médio por marca (diferença entre preço antigo e preço novo)
+- Desconto médio por marca (razão entre preço antigo e preço novo)
 
 ## Como Executar o Projeto
 
