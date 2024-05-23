@@ -28,9 +28,7 @@ Os dados são armazenados temporariamente em arquivos JSON.
 
 Os dados extraídos são carregados em um DataFrame do Pandas para processamento adicional. Nesta etapa, são realizadas transformações e limpezas dos dados, tais como:
 
-- Remoção de valores nulos
 - Conversão de tipos de dados
-- Normalização dos preços
 - Tratamento nas categorias de preço antigo e preço novo para assegurar consistência e precisão
 
 ### SQLite
@@ -65,16 +63,16 @@ Foi desenvolvido um painel de BI com Streamlit que permite a visualização inte
 
 3. **Execute o scraper:**
    ```bash
-   scrapy crawl tenis_mercado_livre
+   scrapy crawl mercadolivre -o ../data/data.jsonl
    ```
 
 4. **Execute o script de transformação e carga:**
    ```bash
-   python transform_load.py
+   python transformacao/main.py
    ````
 5. **Inicie a aplicação Streamlit:**
    ```bash
-   streamlit run app.py
+   streamlit run dashboard/app.py
    ````
    
 
