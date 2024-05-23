@@ -56,4 +56,26 @@ Foi desenvolvido um painel de BI com Streamlit que permite a visualização inte
    ```bash
    git clone https://github.com/seu-usuario/nome-do-repositorio.git
    cd nome-do-repositorio
-  '''
+   ```
+
+2. **Instale as dependências:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Execute o scraper:**
+   ```bash
+   scrapy crawl tenis_mercado_livre
+   ```
+
+4. **Execute o script de transformação e carga:**
+   ```bash
+   python transform_load.py
+   ````
+5. **Inicie a aplicação Streamlit:**
+   ```bash
+   streamlit run app.py
+   ````
+   
+
+  
