@@ -1,20 +1,59 @@
-﻿# Web scraping no site do MercadoLivre
+# Projeto de Web Scraping da Seção de Tênis Masculinos do Mercado Livre
 
-Dentro da pasta SRC os seguintes comandos:
+Este projeto tem como objetivo realizar o web scraping da seção de tênis masculinos do site Mercado Livre utilizando o framework Scrapy. A aplicação extrai dados relevantes dos produtos, transforma as informações utilizando a biblioteca Pandas e carrega os dados em um banco de dados SQLite. Além disso, um painel de BI foi desenvolvido usando Streamlit para visualização interativa dos dados coletados.
 
-Para rodar o web scraping (EXTRAT)->
+## Tecnologias Utilizadas
 
-> scrapy crawl mercadolivre -o ../../data/data.jsonl
+- **Scrapy:** Framework de web scraping usado para extrair dados da seção de tênis masculinos do Mercado Livre.
+- **Pandas:** Biblioteca para manipulação e análise de dados, utilizada para transformar e limpar os dados extraídos.
+- **SQLite:** Banco de dados relacional leve para armazenamento dos dados extraídos e transformados.
+- **Streamlit:** Ferramenta para a criação de aplicações web interativas, utilizada para desenvolver o painel de BI que permite a visualização dos dados.
 
-Para rodar o PANDAS (TRANSFORM e LOAD)->
+## Estrutura do Projeto
 
-> python transformacao/main.py
+### Scrapy
 
+A aplicação Scrapy é configurada para acessar a seção de tênis masculinos do Mercado Livre, navegando pelas páginas e extraindo informações relevantes de cada produto, tais como:
 
-Para rodar o Streamlit (BI)->
+- Marca do produto
+- Nome do produto
+- Preço antigo
+- Preço novo
+- Número de avaliações
+- Avaliação (de 0 a 5)
 
-> streamlit run dashboard/app.py 
+Os dados são armazenados temporariamente em arquivos JSON.
 
+### Pandas
 
-Aplicação de um pipeline ETL com dashboard, feita para fazero web scraping (Extrat) no site do Mercado usando o Scrapy, tranformação com Pandas e Load no SQLite. além disso, conta com um dashboard feito em Streamlit. Foi utilizado conceito de Git para versioanemnto e o Software Dbeaver para análise do banco de dados relacioanl.
-Aplicação 100% open suarce e funcional.
+Os dados extraídos são carregados em um DataFrame do Pandas para processamento adicional. Nesta etapa, são realizadas transformações e limpezas dos dados, tais como:
+
+- Remoção de valores nulos
+- Conversão de tipos de dados
+- Normalização dos preços
+- Tratamento nas categorias de preço antigo e preço novo para assegurar consistência e precisão
+
+### SQLite
+
+Após a transformação, os dados são carregados em um banco de dados SQLite. A estrutura do banco de dados inclui uma tabela principal onde todas as informações dos produtos são armazenadas.
+
+### Streamlit
+
+Foi desenvolvido um painel de BI com Streamlit que permite a visualização interativa dos dados. O painel inclui os seguintes indicadores e visualizações:
+
+- Número total de itens
+- Número total de marcas
+- Preço médio dos tênis
+- Marcas mais encontradas
+- Preço médio por marca
+- Satisfação média por marca (avaliação)
+- Desconto médio por marca (diferença entre preço antigo e preço novo)
+
+## Como Executar o Projeto
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   cd nome-do-repositorio
+  '''
