@@ -63,7 +63,7 @@ Foi desenvolvido um painel de BI com Streamlit que permite a visualização inte
 
 3. **Execute o scraper na pasta src\coleta:**
    ```bash
-   scrapy crawl mercadolivre -o ../data/data.jsonl
+   scrapy crawl mercadolivre -o data/data.jsonl
    ```
 
 4. **Execute o script de transformação e carga:**
